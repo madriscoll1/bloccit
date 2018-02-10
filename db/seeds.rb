@@ -21,6 +21,8 @@ require 'random_data'
    )
  end
 
+ Post.find_or_create_by!(title:"unique post", body:"This is a unique post")
+ Comment.find_or_create_by!(post: posts.first, body:"unique comment")
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
